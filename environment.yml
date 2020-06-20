@@ -1,0 +1,6 @@
+name: julia-ihi-code-club
+channels:
+  - conda-forge
+dependencies:
+  - numpy=1.18.1
+  - pandas=1.0.4

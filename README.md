@@ -42,7 +42,7 @@ Julia, either in the terminal or in your favourite IDE, from the REPL you can
 enter the package manager mode with the `]` key, then run the following command:
 
 ```
-add CSV, DataFrames, PyCall
+add DataFrames, PyCall
 build PyCall
 ```
 
@@ -54,7 +54,7 @@ directly in the REPL (this also works in Jupyter notebooks)
 
 ```julia
 using Pkg
-Pkg.add(["CSV", "DataFrames", "PyCall"])
+Pkg.add(["DataFrames", "PyCall"])
 Pkg.build("PyCall")
 ```
 
@@ -62,7 +62,7 @@ After you have successfully installed and built the packages, make sure they
 work as expected with the following command in the REPL:
 
 ```julia
-using CSV, DataFrames, PyCall
+using DataFrames, PyCall
 ```
 
 Brew a cup of coffee while you wait for the precompilation of the packages to
@@ -168,9 +168,6 @@ Many useful learning resources are listed on [the official
 website](https://julialang.org/learning/).  You may also be interested in
 
 * [Official Julia documentation](https://docs.julialang.org/en/v1/)
-* [A tutorial on
-  `DataFrames.jl`](https://github.com/bkamins/Julia-DataFrames-Tutorial/)
-* [Queryverse](https://www.queryverse.org/), a Julia data science stack
 * [Julia - Learn X in Y](https://learnxinyminutes.com/docs/julia/), a quick
   Julia cheatsheet
 * [Julia By Example](https://juliabyexample.helpmanual.io/), another cheatsheet
