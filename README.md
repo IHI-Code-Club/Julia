@@ -1,5 +1,7 @@
 # Julia @ IHI Code Club
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/IHI-Code-Club/Julia/master?filepath=julia.ipynb)
+
 ## Pre-requisites
 
 If you can't (or don't want to ;-) install Julia on your machine, you will
@@ -65,6 +67,100 @@ using CSV, DataFrames, PyCall
 
 Brew a cup of coffee while you wait for the precompilation of the packages to
 finish :-)
+
+### Optional dependencies
+
+If you want to run the Jupyter notebbok, you have to install the Julia kernel
+provided by the [`IJulia.jl`](https://github.com/JuliaLang/IJulia.jl) package.
+To install and build it, either enter the package manager mode in the REPL with
+`]` and run the commands
+
+```
+add IJulia
+build IJulia
+```
+
+or run the coomands
+
+```julia
+using Pkg
+Pkg.add("IJulia")
+Pkg.build("IJulia")
+```
+
+## How to follow the live coding session
+
+To follow the live coding session on your computer, clone the git repository
+locally with the command
+
+```
+git clone https://github.com/IHI-Code-Club/Julia
+```
+
+You then have many options, depending on your preferred setup.  You can follow
+what we'll do during the live coding session in either the MarkDown document
+[`julia.md`](./julia.md), the Jupyter notebook [`julia.ipynb`](./julia.ipynb),
+or the Julia script [`src/julia.jl`](./src/julia.jl).  The former two documents
+have been automatically generated from the latter one using a package for
+literate programming called
+[`Literate.jl`](https://github.com/fredrikekre/Literate.jl).
+
+### Using the REPL
+
+If you simply want to use Julia's REPL, start it and type the commands that
+we'll be running.  You can also copy them from any of the three documents
+mentioned above.
+
+### Using an IDE
+
+#### Juno
+
+If you decided to use Juno, open [`src/julia.jl`](./src/julia.jl) in Atom.  You
+can evaluate a line of code or a selection of lines with `Ctrl + Enter`, the
+result of the evaluation will shown inline.  For more information, read the
+[Basic Usage](http://docs.junolab.org/latest/man/basic_usage/) instructions in
+the Juno documentation.
+
+#### Visual Studio Code
+
+The Julia extension for Visual Studio Code allows you to evaluate the code
+directly in the editor, similarly to what Juno does.  Open the file
+[`src/julia.jl`](./src/julia.jl) and hit `Alt + Enter` to evaluate the current
+code block and move to the next line, or use `Ctrl + Enter` to simply evaluate
+the current line.  Refer to the [Running
+Code](https://www.julia-vscode.org/docs/stable/userguide/runningcode/) section
+of the manual for more information.
+
+### Running the Jupyter notebook locally
+
+If you enjoy using Jupyter notebooks, you may want to run
+[`julia.ipynb`](./julia.ipynb).  Remember to install the `IJulia.jl` package as
+described above.
+
+You can run the notebook as usual with
+
+```
+jupyter /PATH/TO/julia.ipynb
+```
+
+or in the Julia REPL with the commands
+
+```julia
+using IJulia
+notebook(detached=true)
+```
+
+then browse to the directory where this repository is and open the notebook.
+
+### Running the Jupyter notebook on Binder
+
+If you didn't have the possibility to install locally Julia and the package
+suggested for the live coding session, you may still have a chance: you can run
+[the Jupyter notebook on
+Binder](https://mybinder.org/v2/gh/IHI-Code-Club/Julia/master?filepath=julia.ipynb).
+This solution, however, depends on the availability of Binder resources at the
+time of live coding: many users connected at the same time may cause a slow down
+of the remote notebook.
 
 ## Further resources
 
