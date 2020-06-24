@@ -12,17 +12,17 @@ sin(3.14)
 
 # You can define simple functions with the one-line syntax
 
-f(x) = 3 * x ^ 2
+f(x) = 4 * x - 2.5
 
 # or with the longer, equivalent, syntax
 
 function g(x)
-    return 3 * x ^ 2
+    return 4 * x - 2.5
 end
 #-
-f(5 - 4)
+f(log(57) / 4)
 #-
-g(5 - 4)
+g(log(57) / 4)
 #-
 
 # You can assign a value to a variable, like the speed of light in vacuum in m/s
@@ -74,8 +74,29 @@ length(v)
 v[1]
 #-
 v[3]
-#-
+
+# You can apply functions or operators with the broadcasting syntax: the dot:
+
 4 .* v .- 2.5
+
+# Broadcasting is completely generic and works with user-defined functions:
+
+f.(v)
+
+# Nested broadcasted expressions are fused into a single loop.  To know more
+# about broadcasting, read the blog post [More Dots: Syntactic Loop Fusion in
+# Julia](https://julialang.org/blog/2017/01/moredots/).
+#
+# We can define a simple function implementing a naive summation algorithm:
+
+function mysum(vector)
+    result = 0.0
+    for x in vector
+        result = result + x # or result += x
+    end
+    return result
+end
+mysum(v)
 
 # You can generate random numbers with
 # [`rand`](https://docs.julialang.org/en/v1/stdlib/Random/#Base.rand) and
@@ -194,9 +215,9 @@ describe(df)
 #-
 df[7:12, :]
 #-
-df[:, [:A, :B]]
+df[:, ["A", "B"]]
 #-
-df[6:10, [:A, :C]]
+df[6:10, ["A", "C"]]
 #-
 df[iseven.(df.B), :]
 #-
@@ -326,7 +347,8 @@ df.age
 #   has a large compilation latency.  After loading the package, the first plot
 #   in a session can take ~20-30 seconds, but this is improving!
 # * [`Makie.jl`](https://github.com/JuliaPlots/Makie.jl): it aims to replace
-#   `Plots.jl` in the future, but it has similar issues in terms of initial plot
+#   `Plots.jl` in the future, adding many more interactive and 3D features, but
+#   it has similar issues in terms of initial plot
 # * [`Gadfly.jl`](https://github.com/GiovineItalia/Gadfly.jl): heavily inspired
 #   by "The Grammar of Graphics" book.  Kind of quick
 # * [`UnicodePlots.jl`](https://github.com/Evizero/UnicodePlots.jl): simple
@@ -375,6 +397,8 @@ df.age
 
 # ## Environments and reproducibility
 #
+# ![Reproducibility](./figures/replication.jpg "Reproducibility")
+#
 # A great attention is dedicated to reproducibility in the Julia community.  The
 # built-in package manager, `Pkg.jl`, allows you to create environments, which
 # are controlled by two files:
@@ -402,6 +426,11 @@ df.age
 # You can read more about [working with
 # environments](https://julialang.github.io/Pkg.jl/v1/environments/) in the
 # documentation of `Pkg.jl`.
+#
+# Also binary package or data can become a "package" with the [artifact
+# system](https://julialang.org/blog/2019/11/artifacts/): you can add an
+# "artifact", with a version, as dependency to your package or environment to
+# ensure full reproducibility.
 
 # ## Notebooks and literate programming
 #
@@ -437,7 +466,8 @@ df.age
 # * [`#JuliaLang`](https://twitter.com/hashtag/JuliaLang) hashtag on Twitter
 # * [JuliaLang](https://www.youtube.com/user/JuliaLanguage) channel on YouTube,
 #   where many tutorials and most JuliaCon talks are collected
-# * Watch online [JuliaCon 2020](https://juliacon.org/2020/)!
+# * Register for free to watch online [JuliaCon
+#   2020](https://juliacon.org/2020/)!
 #
 # You can find more resources in the [community
 # page](https://julialang.org/community/) of the official website.
