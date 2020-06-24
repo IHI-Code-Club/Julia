@@ -2,6 +2,8 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/IHI-Code-Club/Julia/b3e61796555a1f56d133f4139891a3f7f3f3f3ba?filepath=julia.ipynb)
 
+[MS Stream](https://web.microsoftstream.com/video/6a4995f3-7a0d-4c33-8d7d-eed645325b6b) link to recorded presentation (24 June 2020)
+
 ## Pre-requisites
 
 If you can't (or don't want to ;-) install Julia on your machine, you will
