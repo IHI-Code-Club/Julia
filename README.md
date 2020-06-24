@@ -1,6 +1,6 @@
 # Julia @ IHI Code Club
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/IHI-Code-Club/Julia/master?filepath=julia.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/IHI-Code-Club/Julia/b3e61796555a1f56d133f4139891a3f7f3f3f3ba?filepath=julia.ipynb)
 
 ## Pre-requisites
 
@@ -32,9 +32,6 @@ development environment, go for it!  There will likely be a plugin to add
 support for Julia.
 
 ### Installing the required packages
-
-*NOTE: these instructions are in evolution, make sure to check them again one or
-two days before the meeting.*
 
 During the live coding session we'll use some third-party packages.  Julia comes
 with a built-in package manager, which you can use to install them.  Start
